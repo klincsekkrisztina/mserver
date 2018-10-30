@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by klincsekkrisztina (http://jsbin.com/bahejan/14/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="[mserver]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <title>mserver</title>
+<style id="jsbin-css">
+body, html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  height: 100%;
+}
+
+form {
+  text-align: left;
+  position: relative; 
+}
+
+.button {
+
+    background-color: #5042f4; 
+    border: none;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fillInSquare {
+   border-radius: 4px;
+   font-size: 15px;
+   padding: 5px;
+}
+</style>
+</head>
+<body>
+  <form id="form" action="/action_page.php">
+    <h2>Card registration</h2>
+    <p><b>Name:</b></p>
+    <input type="text" id="name" class="fillInSquare"><br>
+    <p><b>Card ID:</b></p>
+    <input type="text" id="cardId" class="fillInSquare"><br><br>
+    <input type="submit" value="Submit" class="button">
+  </form>
+</body>
+</html>
