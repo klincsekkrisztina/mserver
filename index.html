@@ -12,12 +12,11 @@ Released under the MIT license: http://jsbin.mit-license.org
 <head>
 <meta name="description" content="[mserver]">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width" initial-scale=1>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
-  <script src = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
   <script>
     $(document).ready(function(){
           var socket = io();
@@ -33,29 +32,97 @@ Released under the MIT license: http://jsbin.mit-license.org
           });
     });
     </script>
+  
   <title>mserver</title>
+  
 <style id="jsbin-css">
-body, html {
+
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+  
+  
+  body, html {
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  box-sizing: border-box;
+  font-size: 16px;
   height: 100%;
+  width: 100%;
+}
+  
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-around;
+  align-items:center;
+  line-height: 1.8;
 }
 
-form {
+#form {
   text-align: left;
-  position: relative; 
 }
 
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 3;  
+  }
+  
 .button {
 
-    background-color: #5042f4; 
+    background-color: rgb(70, 52, 113); 
     border: none;
     color: white;
     padding: 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     margin: 2px 2px;
     cursor: pointer;
@@ -68,16 +135,89 @@ form {
    font-size: 15px;
    padding: 5px;
 }
+  
+/*Toggle switch style*/
+  
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(70, 52, 113);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(70, 52, 113);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+  
+  
 </style>
+
 </head>
-<body>
-  <form id="form">
-    <h2>Card registration</h2>
-    <p><b>Name:</b></p>
-    <input type="text" id="name" class="fillInSquare"><br>
-    <p><b>Card ID:</b></p>
-    <input type="text" id="cardId" class="fillInSquare"><br><br>
-    <input type="submit" id="submit" value="Submit" class="button">
-  </form>
+  
+<body class="flex-container">
+      
+    <div id="form">
+      <h1>Card registration</h1>
+      <p>Name:</p>
+      <input type="text" id="name" class="fillInSquare"><br>
+      <p>Card ID:</p>
+      <input type="text" id="cardId" class="fillInSquare"><br><br>
+      <input type="submit" id="submit" value="Submit" class="button">
+    </div>
+    
+    <div id="gateSelector">
+      <h1>Select</h1>
+      <div>
+        <p>name</p>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+
+       </div>
+    </div> 
+      
 </body>
 </html>
