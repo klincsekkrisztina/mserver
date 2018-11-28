@@ -14,6 +14,8 @@ Released under the MIT license: http://jsbin.mit-license.org
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width" initial-scale=1>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
@@ -95,16 +97,69 @@ table {
   width: 100%;
 }
   
-.flex-container {
+/* topnav style*/
+  
+  #myTopnav{
+  height: 8%;
+  background-color: rgb(70, 52, 113);
+  box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
-  justify-content:space-around;
-  align-items:center;
-  line-height: 1.8;
+  align-content: stretch;
 }
 
-#form {
+.topnav a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: 	rgb(70, 52, 113);
+}
+
+.active {
+  background-color: rgb(70, 52, 113);
+  color: white;
+}
+
+i {
+  margin-right: 0.3em;
+}
+
+/*flex container style*/  
+
+.flex-container {
+  height: 84%;
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+  line-height: 1.8;
+  background-color: white;
+}
+
+/*.formPanel style*/
+  
+#formPanel {
   text-align: left;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 40%;
+  height: 93%;
+  border-radius: 0px;
+  margin-right: 2%;
+  border: 2px solid;
+  border-color: rgb(70, 52, 113); 
 }
 
 h1 {
@@ -114,34 +169,55 @@ h1 {
   }
   
 .button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(70, 52, 113);
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;;  
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
-    background-color: rgb(70, 52, 113); 
-    border: none;
-    color: white;
-    padding: 7px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+.button:hover {
+    background-color: rgb(95, 75, 139);
     font-weight: bold;
-    margin: 2px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .fillInSquare {
+   width: 90%; 
    border-radius: 4px;
    font-size: 15px;
    padding: 5px;
 }
   
+/*gateSelector style*/
+
+ #gateSelector {
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 53%;
+  height: 93%;
+  border: 2px solid;
+  border-color: rgb(70, 52, 113);
+  overflow: scroll; 
+
+}
+  
+#gateSelector h1{
+  display: block;
+  }
 /*Toggle switch style*/
   
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 63px;
   height: 34px;
 }
 
@@ -190,15 +266,47 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
+
+  #repeatableRow {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+   
+  }
   
+  .gateName {
+    display: inline-block;
+    margin-right: 2em;
+  }
+  
+
+/*footer style*/
+
+footer {
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(70, 52, 113);
+  color: white;
+}
+
   
 </style>
 
 </head>
+<body>
   
-<body class="flex-container">
-      
-    <div id="form">
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active"><i class="fas fa-dungeon"></i></a>
+    <a href="#reg"><i class="far fa-address-card"></i>Card registration</a>
+    <a href="#management"><i class="fas fa-diagnoses"></i> Management</a>
+  </div>  
+  
+  <div id="main" class="flex-container">
+    <div id="formPanel">
       <h1>Card registration</h1>
       <p>Name:</p>
       <input type="text" id="name" class="fillInSquare"><br>
@@ -209,15 +317,25 @@ input:checked + .slider:before {
     
     <div id="gateSelector">
       <h1>Select</h1>
-      <div>
-        <p>name</p>
+      <div id="repeatableRow">
+        <p class="gateName">namersjtijbgrt</p>
         <label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
         </label>
-
        </div>
+      <div id="repeatableRow">
+        <p class="gateName">erivhutbnwvitnbname</p>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+       </div>        
+
     </div> 
+  </div>
+  
+   <footer>Footer</footer>
       
 </body>
 </html>
