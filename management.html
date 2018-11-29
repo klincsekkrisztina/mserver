@@ -15,7 +15,7 @@ Released under the MIT license: http://jsbin.mit-license.org
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <title>JS Bin</title>
+  <title>Management</title>
 <style id="jsbin-css">
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -88,6 +88,12 @@ i {
 
 /*flex container style*/
 
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 3;  
+  }
+
 .flex-container {
   height: 84%;
   display: flex;
@@ -105,22 +111,102 @@ i {
 .controlPanel{
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
-  padding: 20px;
-  width: 30%;
+  padding: 3%;
+  width: 40%;
   height: 93%;
   border-radius: 0px;
-  margin-right: 2%;
   border: 2px solid;
-  border-color: rgb(70, 52, 113); 
+  border-color: rgb(70, 52, 113);
+  margin-right: 2%;
+  overflow: scroll;
+  display: flex;
+ 
 }
 
+#gateSelector{
+  width: 100%;
+  }  
+
+#gateSelector h1{
+  display: block;
+  text-align: center;
+  }
+  
+/*Toggle switch style*/
+  
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 63px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(70, 52, 113);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(70, 52, 113);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+#repeatableRow {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5em;
+          
+}
+  
+.gateName {
+    display: inline-block;
+    margin-left: 1.5em;
+  }
+  
 /*.eventsPanel style*/
 
 .eventsPanel{
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
   padding: 20px;
-  width: 63%;
+  width: 53%;
   height: 93%;
   border: 2px solid;
   border-color: rgb(70, 52, 113);
@@ -145,13 +231,30 @@ footer {
 
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"><i class="fas fa-dungeon"></i></a>
-    <a href="#reg"><i class="far fa-address-card"></i>Card registration</a>
-    <a href="#management"><i class="fas fa-diagnoses"></i> Management</a>
-   </div>
-
+    <a href="index.html"><i class="far fa-address-card"></i>Card registration</a>
+    <a href="management.html"><i class="fas fa-diagnoses"></i> Management</a>
+  </div>
   
   <div id="main" class="flex-container">
-    <div class="controlPanel" id="controlPanel"></div>
+    <div class="controlPanel" id="controlPanel">
+      <div id="gateSelector">
+        <h1>Select</h1>
+        <div id="repeatableRow">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <p class="gateName">namersjtijbgrt</p>
+        </div>
+        <div id="repeatableRow">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <p class="gateName">erivhutbnwvitnbname</p>
+        </div>
+      </div> 
+    </div>
     <div class="eventsPanel" id="eventsPanel"></div>
   </div>
   

@@ -13,6 +13,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 <meta name="description" content="[mserver]">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width" initial-scale=1>
+  
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
@@ -150,10 +151,10 @@ i {
 /*.formPanel style*/
   
 #formPanel {
-  text-align: left;
+  text-align: center;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
-  padding: 20px;
+  padding: 3%;
   width: 40%;
   height: 93%;
   border-radius: 0px;
@@ -162,6 +163,15 @@ i {
   border-color: rgb(70, 52, 113); 
 }
 
+  
+.fillInSquare {
+   width: 94%; 
+   border-radius: 4px;
+   font-size: 15px;
+   padding: 5px;
+   text-align: center;
+}
+  
 h1 {
   font-size: 18px;
   font-weight: 600;
@@ -188,30 +198,27 @@ h1 {
     font-weight: bold;
 }
 
-.fillInSquare {
-   width: 90%; 
-   border-radius: 4px;
-   font-size: 15px;
-   padding: 5px;
-}
+
   
 /*gateSelector style*/
 
  #gateSelector {
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
-  padding: 20px;
+  padding: 3%;
   width: 53%;
   height: 93%;
   border: 2px solid;
   border-color: rgb(70, 52, 113);
   overflow: scroll; 
+  text-align: center;
 
 }
   
 #gateSelector h1{
   display: block;
   }
+  
 /*Toggle switch style*/
   
 .switch {
@@ -267,17 +274,17 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-  #repeatableRow {
+#repeatableRow {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    padding: 0.5em;
+    padding-bottom: 0.5em;
    
   }
   
-  .gateName {
+.gateName {
     display: inline-block;
-    margin-right: 2em;
+    margin-left: 1em;
   }
   
 
@@ -301,8 +308,8 @@ footer {
   
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"><i class="fas fa-dungeon"></i></a>
-    <a href="#reg"><i class="far fa-address-card"></i>Card registration</a>
-    <a href="#management"><i class="fas fa-diagnoses"></i> Management</a>
+    <a href="index.html"><i class="far fa-address-card"></i>Card registration</a>
+    <a href="management.html"><i class="fas fa-diagnoses"></i> Management</a>
   </div>  
   
   <div id="main" class="flex-container">
@@ -318,18 +325,19 @@ footer {
     <div id="gateSelector">
       <h1>Select</h1>
       <div id="repeatableRow">
-        <p class="gateName">namersjtijbgrt</p>
-        <label class="switch">
+         <label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
         </label>
+        <p class="gateName">namersjtijbgrt</p>
+       
        </div>
       <div id="repeatableRow">
-        <p class="gateName">erivhutbnwvitnbname</p>
         <label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
         </label>
+        <p class="gateName">erivhutbnwvitnbname</p>
        </div>        
 
     </div> 
