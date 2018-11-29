@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by klincsekkrisztina (http://jsbin.com/vuyatum/46/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="[gate UI - gate management]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html, body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   font-family: 'Montserrat', sans-serif;
+}
+
+/* topnav style*/
+
+#myTopnav{
+  height: 8%;
+  background-color: rgb(70, 52, 113);
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch;
+}
+
+.topnav a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: 	rgb(70, 52, 113);
+}
+
+.active {
+  background-color: rgb(70, 52, 113);
+  color: white;
+}
+
+i {
+  margin-right: 0.3em;
+}
+
+/*flex container style*/
+
+.flex-container {
+  height: 84%;
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 1.8;
+  background-color: white; 
+}
+
+/*.controlPanel style*/
+
+.controlPanel{
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 30%;
+  height: 93%;
+  border-radius: 0px;
+  margin-right: 2%;
+  border: 2px solid;
+  border-color: rgb(70, 52, 113); 
+}
+
+/*.eventsPanel style*/
+
+.eventsPanel{
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 63%;
+  height: 93%;
+  border: 2px solid;
+  border-color: rgb(70, 52, 113);
+}
+
+/*footer style*/
+
+footer {
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(70, 52, 113);
+  color: white;
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active"><i class="fas fa-dungeon"></i></a>
+    <a href="#reg"><i class="far fa-address-card"></i>Card registration</a>
+    <a href="#management"><i class="fas fa-diagnoses"></i> Management</a>
+   </div>
+
+  
+  <div id="main" class="flex-container">
+    <div class="controlPanel" id="controlPanel"></div>
+    <div class="eventsPanel" id="eventsPanel"></div>
+  </div>
+  
+  <footer>Footer</footer>
+
+</body>
+</html>
