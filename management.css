@@ -1,0 +1,208 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html, body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   font-family: 'Montserrat', sans-serif;
+}
+
+/* topnav style*/
+
+#myTopnav{
+  height: 8%;
+  background-color: rgb(70, 52, 113);
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch;
+}
+
+.topnav a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: 	rgb(70, 52, 113);
+}
+
+.active {
+  background-color: rgb(70, 52, 113);
+  color: white;
+}
+
+i {
+  margin-right: 0.3em;
+}
+
+/*flex container style*/
+
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 3;  
+  }
+
+.flex-container {
+  height: 84%;
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 1.8;
+  background-color: white; 
+}
+
+/*.controlPanel style*/
+
+.controlPanel{
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 3%;
+  width: 40%;
+  height: 93%;
+  border-radius: 0px;
+  border: 2px solid;
+  border-color: rgb(70, 52, 113);
+  margin-right: 2%;
+  overflow: scroll;
+  display: flex;
+ 
+}
+
+#gateSelector{
+  width: 100%;
+  }  
+
+#gateSelector h1{
+  display: block;
+  text-align: center;
+  }
+  
+/*Toggle switch style*/
+  
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 63px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(70, 52, 113);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(70, 52, 113);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+#repeatableRow {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5em;
+          
+}
+  
+.gateName {
+    display: inline-block;
+    margin-left: 1.5em;
+  }
+  
+/*.eventsPanel style*/
+
+.eventsPanel{
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 53%;
+  height: 93%;
+  border: 2px solid;
+  border-color: rgb(70, 52, 113);
+}
+
+/*footer style*/
+
+footer {
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(70, 52, 113);
+  color: white;
+}
+
+
