@@ -18,7 +18,7 @@ Released under the MIT license: http://jsbin.mit-license.org
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <link rel="stylesheet" href="index.css">
-  
+  <script src="index.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
@@ -26,7 +26,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     $(document).ready(function(){
           var socket = io();
           $("#submit").click(function(){
-
+            
             socket.emit('id_submitted',$("#name").val(), $("#cardId").val());
             document.getElementById("cardId").value = '';
             document.getElementById("name").value = '';
@@ -36,10 +36,18 @@ Released under the MIT license: http://jsbin.mit-license.org
             // $("#cardId").append(msg + '<br /><br />');
           });
     });
-    </script>
+    
+  </script>
   
-  <title>mserver</title>
+  <script>
+    function gateNameToChecklist(){
+      var gName=document.getElementById("gateListItem").name;
+      document.getElementById("gateName").innerHTML = gName; 
+    }
+        window.onload = gateNameToChecklist;
+  </script>
   
+  <title>Card registration</title>
 </head>
 <body>
   
@@ -61,24 +69,12 @@ Released under the MIT license: http://jsbin.mit-license.org
     
     <div id="gateSelector">
       <h1>Select</h1>
-      <div id="repeatableRow">
-         <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-        <p class="gateName">namersjtijbgrt</p>
-       
-       </div>
-      <div id="repeatableRow">
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-        <p class="gateName">erivhutbnwvitnbname</p>
-       </div>        
+        <div id="repeatableRow">
+          <input id="gateListItem" type="checkbox" name="gate1" value="x"><p id="gateName"></p><br>
+        </div>
+    </div>
+  </div> 
 
-    </div> 
-  </div>
   
   <footer>Footer</footer>
       
