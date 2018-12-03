@@ -64,5 +64,21 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+}
+
+.message{
+  text-align: center;
+  line-height: 2;  
+}
+
+.fa-usb{
+  font-size: 90px;
+  padding: 20px;
+  border: 5px solid;
+  border-color: white;
+  border-radius: 50%; 
+}
+.fa-usb:hover{
+  color: rgb(70, 52, 113);
+  background-color: white;
 }
